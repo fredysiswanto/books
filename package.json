@@ -5,15 +5,16 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "jest",
-    "start": "node src/server.js",
-    "start-dev": "nodemon src/server.js",
+    "test": "npx cypress open",
+    "start": "node server/server.js",
+    "start-dev": "nodemon server/server.js",
     "lint": "eslint ./src"
   },
   "author": "Fredy Siswanto",
   "license": "ISC",
   "dependencies": {
     "@hapi/hapi": "^21.3.2",
+    "cypress": "^12.11.0",
     "nanoid": "^4.0.2"
   },
   "devDependencies": {

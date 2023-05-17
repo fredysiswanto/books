@@ -7,7 +7,7 @@ import {
   deleteBookByIdHandler,
   // getBookOptional,
 } from './handler.js';
-
+import generatorKtp from './generator/ktp.js';
 const routes = [
   {
     method: '*',
@@ -41,11 +41,11 @@ const routes = [
     path: '/books/{bookId}',
     handler: deleteBookByIdHandler,
   },
-  // {
-  //   method: 'GET',
-  //   path: '/books1',
-  //   handler: getBookOptional,
-  // },
+  {
+    method: 'GET',
+    path: '/generator/ktp',
+    handler: generatorKtp,
+  },
 ];
 // console.log(books);
 
