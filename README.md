@@ -16,7 +16,7 @@ Testing API dan E2E Website
 ## start
 
 ```sh
- git clone [url repo](https://github.com/fredysiswanto/books.git)
+ git clone [url_repo](https://github.com/fredysiswanto/books.git)
  npm install
 ```
 
