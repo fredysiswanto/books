@@ -7,7 +7,8 @@ import {
   deleteBookByIdHandler,
   // getBookOptional,
 } from './handler.js';
-import generatorKtp from './generator/ktp.js';
+import generatorNiK from './generator/nik.js';
+import generatorEmail from './generator/email.js';
 const routes = [
   {
     method: '*',
@@ -43,8 +44,13 @@ const routes = [
   },
   {
     method: 'GET',
-    path: '/generator/ktp',
-    handler: generatorKtp,
+    path: '/generator/nik',
+    handler: generatorNiK,
+  },
+  {
+    method: 'GET',
+    path: '/generator/email/{domain}',
+    handler: generatorEmail,
   },
 ];
 // console.log(books);

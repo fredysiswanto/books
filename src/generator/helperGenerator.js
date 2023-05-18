@@ -1,6 +1,9 @@
-// eslint-disable-next-line camelcase
+import { faker } from '@faker-js/faker/locale/id_ID';
 
-import kode_wilayah from '../../data/kode_wilayah.js';
+function randomEmail(params) {
+  return faker.internet.email({ provider: params });
+}
+
 function randomInteger() {
   const result = {};
   // result.day = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -14,21 +17,5 @@ function randomInteger() {
   result.months < 10 ? (result.months = `0${result.months}`) : result.months;
   return result;
 }
-function generateKtp() {
-  const { kode, days, months, years } = randomInteger();
-  const code = kode_wilayah[kode].replace(/\./g, '');
-  const result = `${code}${days}${months}${years}0001`;
-  return result;
-}
 
-const generatorKtp = (request, h) => {
-  const data = {
-    status: 'success',
-    data: {
-      nik: generateKtp(),
-    },
-  };
-  return data;
-};
-
-export default generatorKtp;
+export { randomInteger, randomEmail };
