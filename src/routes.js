@@ -7,8 +7,10 @@ import {
   deleteBookByIdHandler,
   // getBookOptional,
 } from './handler.js';
-import generatorNiK from './generator/nik.js';
+import { generatorNiK } from './generator/nik.js';
 import generatorEmail from './generator/email.js';
+import auth from './auth/login.js';
+import { getUsersHandler, AddUsersHandler } from './ecommerce/users/users.js';
 const routes = [
   {
     method: '*',
@@ -51,6 +53,21 @@ const routes = [
     method: 'GET',
     path: '/generator/email/{domain}',
     handler: generatorEmail,
+  },
+  {
+    method: 'POST',
+    path: '/login',
+    handler: auth,
+  },
+  {
+    method: 'GET',
+    path: '/users',
+    handler: getUsersHandler,
+  },
+  {
+    method: 'POST',
+    path: '/user',
+    handler: AddUsersHandler,
   },
 ];
 // console.log(books);
